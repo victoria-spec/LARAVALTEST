@@ -62,36 +62,29 @@ To install the Product Pulse application, follow these steps:
 1. Unzip the application.
 2. Navigate to the application directory:
    ```bash
-   cd product-pulse''' 
+   cd product-pulse 
    
 3. Modify the .env file to include information about the database connection.
 4. Create an empty database.
 5. Grant only the required permissions for schema manipulation (create, delete, modify tables) and read/write access from all tables in the Product Pulse database. No additional permissions are needed for the user.
 6. Run the following command to deploy dependencies:
    ```bash
-   composer install''' 
+   composer install 
 
 7. Run the following command to migrate the database:
-bash
+   ```bash
+   php artisan migrate:fresh 
 
-php artisan migrate:fresh
+8. Seed the database with initial data:
+   ```bash
+   php artisan db:seed
 
-Seed the database with initial data:
+9. Install frontend dependencies and build the application:
+   ```bash
+   npm install && npm run build
 
-bash
-
-php artisan db:seed
-
-8. Install frontend dependencies and build the application:
-
-bash
-
-npm install && npm run build
-
-9. Run the development server:
-
-bash
-
+10. Run the development server:
+    ```bash
     composer run dev
 
 ## Conclusion
